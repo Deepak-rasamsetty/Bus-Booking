@@ -1,0 +1,52 @@
+[
+    {
+        "id":1,
+        "from": "Location A",
+        "to": "Location B",
+        "boardingTime":"17:00",
+        "droppingTime":"21:00",
+        "fare":"200",
+        "travels":"Travels A",
+        "rating":"4.3"
+    },
+    {
+        "id":2,
+        "from": "Location C",
+        "to": "Location D",
+        "boardingTime":"17:00",
+        "droppingTime":"21:00",
+        "fare":"200",
+        "travels":"Travels B",
+        "rating":"4.3"
+    },
+    {
+        "id":3,
+        "from": "Location E",
+        "to": "Location F",
+        "boardingTime":"17:00",
+        "droppingTime":"21:00",
+        "fare":"200",
+        "travels":"Travels A",
+        "rating":"4.3"
+    },
+    {
+        "id":4,
+        "from": "Location G",
+        "to": "Location H",
+        "boardingTime":"17:00",
+        "droppingTime":"21:00",
+        "fare":"200",
+        "travels":"Travels B",
+        "rating":"4.3"
+    },
+    {
+        "id":5,
+        "from": "Location A",
+        "to": "Location H",
+        "boardingTime":"17:00",
+        "droppingTime":"21:00",
+        "fare":"200",
+        "travels":"Travels A",
+        "rating":"4.3"
+    }
+]
