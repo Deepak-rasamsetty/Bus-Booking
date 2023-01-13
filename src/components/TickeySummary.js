@@ -13,7 +13,7 @@ export default function TickeySummary(props) {
           <ul className="list-unstyled">
             <li>
               {" "}
-              {selectedBus.from} - {selectedBus.to}
+              {selectedBus.boardingLocation} - {selectedBus.droppingLocation}
             </li>
             <li>Boarding time : {selectedBus.boardingTime}</li>
             <li>Dropping time : {selectedBus.droppingTime}</li>

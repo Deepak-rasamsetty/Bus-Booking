@@ -7,26 +7,30 @@ import ContainerWrapper from "./style/ContainerWrapper";
 import BookingPage from "./BookingPage";
 import { CustomContextProvider } from "../context/context";
 import LoadingPage from "./LoadingPage";
+import AddBus from "./AddBus";
+import ModifyBus from "./ModifyBus";
+import AdminPage from "./AdminPage";
 
 export default function Home() {
   const [selectedBus, setSelectedBus] = useState(null);
-  useEffect(() => {
-    console.log(
-      "inside home useEffect - selectedBus : " + JSON.stringify(selectedBus)
-    );
-  }, [selectedBus]);
+  const [availableBusList, setAvailableBusList] = useState([]);
   return (
     <BrowserRouter>
       <header>
         <Navbar />
       </header>
       <CustomContextProvider
-        value={{ selectedBus: selectedBus, setSelectedBus: setSelectedBus }}
+        value={{
+          selectedBus: selectedBus,
+          setSelectedBus: setSelectedBus,
+          availableBusList: availableBusList,
+          setAvailableBusList: setAvailableBusList,
+        }}
       >
         <Routes>
           <Route
             path="/"
-            element={<ContainerWrapper children={<SearchComponent />}/>}
+            element={<ContainerWrapper children={<SearchComponent />} />}
           />
           <Route
             path="/available-buses"
@@ -40,6 +44,32 @@ export default function Home() {
               </div>
             }
           />
+          <Route
+            path="/admin"
+            element={
+              <div className="container">
+                <AdminPage />
+              </div>
+            }
+          >
+            <Route
+              path="/admin/add"
+              element={
+                <div className="container">
+                  <AddBus />
+                </div>
+              }
+            ></Route>
+            <Route
+              path="/admin/modify"
+              element={
+                <div className="container">
+                  <ModifyBus />
+                </div>
+              }
+            ></Route>
+          </Route>
+
           <Route path="/validatingPayment" element={<LoadingPage />} />
         </Routes>
       </CustomContextProvider>

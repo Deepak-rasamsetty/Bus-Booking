@@ -1,12 +1,19 @@
-import React from 'react';
-import busData from '../data/busData.json';
-import BusDetailsComponent from './BusDetailsComponent';
+import React from "react";
+import { useContextValue } from "../context/context";
+import BusDetailsComponent from "./BusDetailsComponent";
 
-export default function AvailableBuses(props) {
-  console.log(JSON.stringify(busData));
+export default function AvailableBuses() {
+  const availableBusList = useContextValue("availableBusList");
   return (
     <div>
-      {busData.map((data) => {return <BusDetailsComponent key={data.id} data={data} />})}
+      {availableBusList.map((busDetails) => {
+        return (
+          <BusDetailsComponent
+            key={busDetails.serviceId}
+            busDetails={busDetails}
+          />
+        );
+      })}
     </div>
-  )
+  );
 }
