@@ -1,19 +1,17 @@
 import React from "react";
 import { useState } from "react";
-import './style/customConfiguration.css'
-import { fetchLocations } from "../data/BusDetails";
+import "./style/customConfiguration.css";
 
 export default function AutoCompleteInput(props) {
   const [suggestions, setSuggestions] = useState([]);
   const [suggestionIndex, setSuggestionIndex] = useState(0);
   const [suggestionsActive, setSuggestionsActive] = useState(false);
-  //const [value, props.setValue] = useState("");
 
   const handleChange = (e) => {
     const query = e.target.value.toLowerCase();
     props.setValue(query);
     if (query.length > 1) {
-        fetchLocations(query,setSuggestions );
+      props.fetchSuggestions(query, setSuggestions);
       setSuggestionsActive(true);
     } else {
       setSuggestionsActive(false);
@@ -77,14 +75,14 @@ export default function AutoCompleteInput(props) {
     <div className="autocomplete ">
       <div>
         <input
-                type="text"
-                className="form-control col-md-6"
-                placeholder="From"
-                aria-label="From"
-                value={props.value}
-                onChange={handleChange}
-                onKeyDown={handleKeyDown}
-              />
+          type="text"
+          className="form-control col-md-6"
+          placeholder="From"
+          aria-label="From"
+          value={props.value}
+          onChange={handleChange}
+          onKeyDown={handleKeyDown}
+        />
       </div>
 
       {suggestionsActive && <Suggestions />}

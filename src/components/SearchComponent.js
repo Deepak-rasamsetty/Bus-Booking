@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useContextValue } from "../context/context";
 import { getSearchResults } from "../data/BusDetails";
 import AutoCompleteInput from "./AutoCompleteInput";
+import { fetchLocations } from "../data/BusDetails";
 export default function SearchComponent() {
   const setAvailableBusList = useContextValue("setAvailableBusList");
   const [aLocation, setALocation] = useState("");
@@ -22,10 +23,10 @@ export default function SearchComponent() {
         <div className="card-body ">
           <div className="col-sm-6 mx-auto">
             <div className="my-1">
-              <AutoCompleteInput value={aLocation} setValue={setALocation} />
+              <AutoCompleteInput value={aLocation} setValue={setALocation} fetchSuggestions={fetchLocations}/>
             </div>
             <div className="my-1">
-            <AutoCompleteInput value={zLocation} setValue={setZLocation}/>
+            <AutoCompleteInput value={zLocation} setValue={setZLocation} fetchSuggestions={fetchLocations}/>
             </div>
 
             <div>
