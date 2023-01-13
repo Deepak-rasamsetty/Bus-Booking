@@ -1,16 +1,17 @@
-import React, { useRef } from "react";
-import { Form } from "react-bootstrap";
+import React, {  useState } from "react";
+
 import { Link } from "react-router-dom";
 import { useContextValue } from "../context/context";
 import { getSearchResults } from "../data/BusDetails";
+import AutoCompleteInput from "./AutoCompleteInput";
 export default function SearchComponent() {
   const setAvailableBusList = useContextValue("setAvailableBusList");
-  const aLocation = useRef("");
-  const zLocation = useRef("");
+  const [aLocation, setALocation] = useState("");
+  const [zLocation, setZLocation] = useState("");
   const handleSubmit = () => {
     var request = {
-      boardingLocation: aLocation.current.value,
-      droppingLocation: zLocation.current.value,
+      boardingLocation: aLocation,
+      droppingLocation: zLocation,
     };
     getSearchResults(request, setAvailableBusList);
   };
@@ -21,22 +22,10 @@ export default function SearchComponent() {
         <div className="card-body ">
           <div className="col-sm-6 mx-auto">
             <div className="my-1">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="From"
-                aria-label="From"
-                ref={aLocation}
-              />
+              <AutoCompleteInput value={aLocation} setValue={setALocation} />
             </div>
             <div className="my-1">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="To"
-                aria-label="To"
-                ref={zLocation}
-              />
+            <AutoCompleteInput value={zLocation} setValue={setZLocation}/>
             </div>
 
             <div>

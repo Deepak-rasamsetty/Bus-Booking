@@ -1,0 +1,7 @@
+.list-group-item.active {
+  background-color: grey;
+  border-color: grey;
+}
+.list-group-item{
+    padding: 0px;
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./Navbar";
 import SearchComponent from "./SearchComponent";
@@ -10,6 +10,7 @@ import LoadingPage from "./LoadingPage";
 import AddBus from "./AddBus";
 import ModifyBus from "./ModifyBus";
 import AdminPage from "./AdminPage";
+import AutoCompleteInput from "./AutoCompleteInput";
 
 export default function Home() {
   const [selectedBus, setSelectedBus] = useState(null);
