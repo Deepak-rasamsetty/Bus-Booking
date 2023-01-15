@@ -22,17 +22,25 @@ export default function Navbar() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-                <Link to="/" className="nav-link active" >
-                Home
+              <li className="nav-item">
+                <Link to="/" className="nav-link active">
+                  Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/admin" className="nav-link active" >
-                Admin
+                <Link to="/admin" className="nav-link active">
+                  Admin
                 </Link>
               </li>
             </ul>
+            <form className="d-flex" role="search">
+              <button className="btn btn-light" type="submit">
+                <h5>
+                <i class="bi bi-person-circle"></i>
+                </h5>
+              
+              </button>
+            </form>
           </div>
         </div>
       </nav>

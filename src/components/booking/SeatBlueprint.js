@@ -13,12 +13,14 @@ export default function SeatBlueprint(props) {
             rowNum={rowNum}
             seatNum={1}
             addToSelectedSeats={props.addToSelectedSeats}
+            reservedSeats={props.reservedSeats}
           />
           <Seat
             key={rowNum + "" + 2}
             rowNum={rowNum}
             seatNum={2}
             addToSelectedSeats={props.addToSelectedSeats}
+            reservedSeats={props.reservedSeats}
           />
         </div>
         <div className="btn-group">
@@ -27,12 +29,14 @@ export default function SeatBlueprint(props) {
             rowNum={rowNum}
             seatNum={3}
             addToSelectedSeats={props.addToSelectedSeats}
+            reservedSeats={props.reservedSeats}
           />
           <Seat
             key={rowNum + "" + 4}
             rowNum={rowNum}
             seatNum={4}
             addToSelectedSeats={props.addToSelectedSeats}
+            reservedSeats={props.reservedSeats}
           />
         </div>
       </div>

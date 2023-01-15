@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useRef } from "react";
 import AddRoutes from "./AddRoutes";
-import { AddServiceContextProvider } from "../context/AddServiceFormContext";
-import { addBusService } from "../data/BusDetails";
+import { AddServiceContextProvider } from "../../context/AddServiceFormContext";
+import { addBusService } from "../../data/BusDetails";
 export default function AddBus() {
   const serviceNoRef = useRef("");
   const travelsRef = useRef("");

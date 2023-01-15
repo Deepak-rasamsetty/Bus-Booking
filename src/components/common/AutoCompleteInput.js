@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import "./style/customConfiguration.css";
+import "../../style/customConfiguration.css";
 
 export default function AutoCompleteInput(props) {
   const [suggestions, setSuggestions] = useState([]);
