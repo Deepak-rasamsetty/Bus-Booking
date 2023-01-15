@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { useContextValue } from '../../context/context'
+import { useLocation } from 'react-router-dom';
 import { fetchReservationDetails } from '../../data/BusDetails';
 import TickeySummary from './TickeySummary'
 
 export default function TicketConfirmation() {
-    const reservationId = useContextValue('reservationId');
+  const location = useLocation();
+    const reservationId = location.state.reservationId;
     const [reservationDetails, setReservationDetails] = useState(null);
     console.log('Ticket confirmation rendered, reservationId - '+reservationId);
     const getSelectedSeatNumbers=()=>{

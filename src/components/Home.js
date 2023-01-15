@@ -10,12 +10,12 @@ import LoadingPage from "./common/LoadingPage";
 import AddBus from "./Admin/AddBus";
 import ModifyBus from "./Admin/ModifyBus";
 import AdminPage from "./Admin/AdminPage";
-import TicketConfirmation from "./booking/TicketConfirmation";
 import WaitAndRedirectPage from "./common/WaitAndRedirectPage";
+import TicketConfirmation from "./booking/TicketConfirmation";
 
 export default function Home() {
   const [selectedBus, setSelectedBus] = useState(null);
-  const [reservationId, setReservationId] = useState(0);
+  const [reservationQueueId, setReservationQueueId] = useState(0);
   const [searchRequest, setSearchRequest] = useState({});
   return (
     <BrowserRouter>
@@ -26,8 +26,8 @@ export default function Home() {
         value={{
           selectedBus: selectedBus,
           setSelectedBus: setSelectedBus,
-          reservationId: reservationId,
-          setReservationId: setReservationId,
+          reservationQueueId: reservationQueueId,
+          setReservationQueueId: setReservationQueueId,
           searchRequest: searchRequest,
           setSearchRequest: setSearchRequest,
 
@@ -78,6 +78,7 @@ export default function Home() {
 
           <Route path="/validatingPayment" element={<LoadingPage />} />
           <Route path="/WaitAndRedirectPage" element={<WaitAndRedirectPage />} />
+          <Route path="/TicketConfirmation" element={<TicketConfirmation />} />
         </Routes>
       </CustomContextProvider>
     </BrowserRouter>

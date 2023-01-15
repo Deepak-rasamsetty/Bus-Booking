@@ -6,7 +6,7 @@ import { useContextValue } from "../../context/context";
 import { Link } from "react-router-dom";
 export default function BookingPage() {
   const selectedBus = useContextValue("selectedBus");
-  const setReservationId = useContextValue("setReservationId");
+  const setReservationQueueId = useContextValue("setReservationQueueId");
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [reservedSeats, setReservedSeats] = useState([]);
 
@@ -35,7 +35,7 @@ export default function BookingPage() {
       boardingLocation: selectedBus.journeyDetails.boardingLocation,
       droppingLocation: selectedBus.journeyDetails.droppingLocation,
       seatNumbers: selectedSeats };
-     reserveTickets(request, setReservationId);
+     reserveTickets(request, setReservationQueueId);
   };
   return (
     <div className="d-flex justify-content-start ">
