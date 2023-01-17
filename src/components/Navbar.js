@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -34,12 +34,13 @@ export default function Navbar() {
               </li>
             </ul>
             <form className="d-flex" role="search">
-              <button className="btn btn-light" type="submit">
-                <h5>
-                <i class="bi bi-person-circle"></i>
-                </h5>
+              {props.loggedInUser && <span> {props.loggedInUser.name}</span>}
+              <Link to="/userProfile" className="nav-link active">
+                <p className="mx-2">
+                <i className="bi bi-person-circle"></i>
+                </p>
               
-              </button>
+              </Link>
             </form>
           </div>
         </div>

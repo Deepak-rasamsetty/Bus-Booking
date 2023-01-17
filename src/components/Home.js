@@ -12,15 +12,17 @@ import ModifyBus from "./Admin/ModifyBus";
 import AdminPage from "./Admin/AdminPage";
 import WaitAndRedirectPage from "./common/WaitAndRedirectPage";
 import TicketConfirmation from "./booking/TicketConfirmation";
+import LoginPage from "./UserManagement/LoginPage";
 
 export default function Home() {
   const [selectedBus, setSelectedBus] = useState(null);
   const [reservationQueueId, setReservationQueueId] = useState(0);
   const [searchRequest, setSearchRequest] = useState({});
+  const [loggedInUser, setLoggedInUser] = useState(null);
   return (
     <BrowserRouter>
       <header>
-        <Navbar />
+        <Navbar loggedInUser={loggedInUser}/>
       </header>
       <CustomContextProvider
         value={{
@@ -79,6 +81,8 @@ export default function Home() {
           <Route path="/validatingPayment" element={<LoadingPage />} />
           <Route path="/WaitAndRedirectPage" element={<WaitAndRedirectPage />} />
           <Route path="/TicketConfirmation" element={<TicketConfirmation />} />
+          <Route path="/userProfile" element={<LoginPage setLoggedInUser={setLoggedInUser}/>} />
+        
         </Routes>
       </CustomContextProvider>
     </BrowserRouter>
